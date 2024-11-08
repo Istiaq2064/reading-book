@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { addToStoreReadList } from '../../utility/addToDB,';
+import { Helmet } from 'react-helmet-async';
 
 const BookDetails = () => {
     const { bookId } = useParams();
@@ -16,7 +17,11 @@ const BookDetails = () => {
 
     
     return (
-        <div className='my-5'>
+       <div>
+        <Helmet>
+            <title>Book details</title>
+        </Helmet>
+         <div className='my-5'>
             <h3>Book details: {bookId}</h3>
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row">
@@ -53,6 +58,7 @@ const BookDetails = () => {
             </div>
 
         </div>
+       </div>
     );
 };
 

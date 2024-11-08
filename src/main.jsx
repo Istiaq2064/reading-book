@@ -11,6 +11,7 @@ import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import Home from './Components/Home/Home.jsx';
 import DashBoard from './Components/DashBoard/DashBoard.jsx';
 import BookDetails from './Components/BooksDetails/BookDetails.jsx';
+import { Helmet } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Helmet>
+      <RouterProvider router={router} />
+    </Helmet>
   </StrictMode>,
 )
